@@ -27,10 +27,7 @@ function DBTableRow({object, columns}){
                         )}
                 <td>
                 <MdOutlineClose style={{color: "red",fontWeight: "bold" }} onClick={ () =>  handleDeleteClick(object[columns[0]], object[columns[1]]) }/>
-                </td>
-                
-                <td>
-                    <MdModeEditOutline style={{color: "red",fontWeight: "bold" }} onClick={ () =>  handleEditClick(object[columns[0]], object[columns[1]]) }/>
+                <MdModeEditOutline style={{color: "red",fontWeight: "bold" }} onClick={ () =>  handleEditClick(object[columns[0]], object[columns[1]]) }/>
                 </td>
             </tr>
             {editClicked &&
