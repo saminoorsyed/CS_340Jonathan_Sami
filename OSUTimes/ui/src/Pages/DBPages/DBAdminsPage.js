@@ -34,7 +34,7 @@ function DBAdminsPage(){
     const [admins, setAdmins] = useState(dbAdmins);
     return(
     <section>
-        <h2>Welcome to the admins table page</h2>
+        <h2>Welcome to the Admins table page</h2>
         <DBTable
             objects = {admins}
             columns = {columns}/>
