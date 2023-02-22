@@ -1,13 +1,12 @@
 import React from "react";
 
 // import components
-import SelectOption from './DBSelectOption'
+import SelectOption from './DBSelectOption';
 
 function DBEditRow({object, colName, IdObjects}){
-    let isID = false
+    let isID = false;
     if (colName.slice(-3)=== "_id"){
-        console.log(IdObjects)
-        isID = true
+        isID = true;
     }
     return(
         <>

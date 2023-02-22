@@ -36,8 +36,9 @@ function DBTable({objects, columns, IdObjects}){
                         <form>
                         {columns.slice(1).map((colName, i)=>
                                             <DBAddRow
-                                                key = {i}
-                                                colName ={colName}
+                                                colName =   {colName}
+                                                IdObjects=  {IdObjects}
+                                                key =       {i}
                                                 />
                                             )}
                         <button>Add Row</button>
