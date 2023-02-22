@@ -4,7 +4,7 @@ import DBTableHeaders from "./DBTableHeaders";
 import DBTableRow from "./DBTableRow";
 import DBAddRow from "./DBAddRow";
 
-function DBTable({objects, columns}){
+function DBTable({objects, columns, IdObjects}){
     return(
         <>
         <table>
@@ -23,8 +23,9 @@ function DBTable({objects, columns}){
                 objects.map((object, i)=>
                     <DBTableRow
                         object = {object}
-                        key = {i}
                         columns = {columns}
+                        IdObjects = {IdObjects}
+                        key = {i}
                     />)}
                 </tbody>
         </table>

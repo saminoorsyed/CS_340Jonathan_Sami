@@ -23,15 +23,18 @@ function DBReactionIconsPage(){
         }
     ]
     let dbColumns = ["reaction_icon_id", "reaction_type", "image_b64_str"];
+    let dbIdObjects = {}
 
     const [columns, setColumns] = useState(dbColumns);
     const [reactionIcons, setReactionIcons] = useState(dbReactionIcons);
+    const [IdObjects, setIdObjects] = useState(dbIdObjects)
     return(
     <section>
         <h2>Welcome to the Reaction Icons table page</h2>
         <DBTable
             objects = {reactionIcons}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };

@@ -5,7 +5,7 @@ import {MdOutlineClose, MdModeEditOutline} from 'react-icons/md'
 import DBRowItem from "./DBRowItem";
 import DBEditRow from "./DBEditRow";
 
-function DBTableRow({object, columns}){
+function DBTableRow({object, columns,IdObjects}){
     const handleDeleteClick = (id, username)=>{
         alert(`you deleted ${username} with an id of ${id}`)
     };
@@ -13,7 +13,6 @@ function DBTableRow({object, columns}){
         let editToggle =  !editClicked;
         setEditClicked(editToggle);
     }
-
     let [editClicked, setEditClicked] = useState(false);
     return(
         <>
@@ -36,9 +35,10 @@ function DBTableRow({object, columns}){
                         <form>
                         {columns.slice(1).map((colName, i)=>
                                             <DBEditRow
-                                                object = {object}
-                                                key = {i}
-                                                colName ={colName}
+                                                object =    {object}
+                                                colName =   {colName}
+                                                IdObjects=  {IdObjects}
+                                                key =       {i}
                                                 />
                                             )}
                         <button>Update</button>

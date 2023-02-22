@@ -28,7 +28,7 @@ function DBUsersPage(){
         }
     ]
     let dbColumns = ["user_id", "username", "fname", "lname", "email"];
-
+    let IdObjects = {}
     const [columns, setColumns] = useState(dbColumns);
     const [users, setUsers] = useState(dbUsers);
     return(
@@ -36,7 +36,8 @@ function DBUsersPage(){
         <h2>Welcome to the Users Table page</h2>
         <DBTable
             objects = {users}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };

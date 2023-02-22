@@ -11,7 +11,7 @@ function DBAuthorsPage(){
             "fname":"The",
             "lname":"Doctor",
             "email":"TheDoctor@Hologram.com",
-            "admin_id":2,
+            "admin_id":1,
             "admin_action":"1) on 11.3.4060 Supreme Commander expressed concern on post content 2)Warned and put on probation on 11.4.4060"
         },
         {
@@ -29,20 +29,25 @@ function DBAuthorsPage(){
             "fname": "Tom",
             "lname": "Paris",
             "email":"tparis@starfleet.com",
-            "admin_id":3,
+            "admin_id":2,
             "admin_action":"Null"
         }
     ]
     let dbColumns = ["author_id", "username", "fname", "lname", "email", "admin_id", "admin_action"];
-
+    let dbIdObjects = {
+        "admin_id": [["Moral Officer",0], ["Chief Engineer",1], ["Lead Botanist",2]]
+    } 
     const [columns, setColumns] = useState(dbColumns);
     const [authors, setAuthors] = useState(dbAuthors);
+    const [IdObjects, setIdObjects] = useState(dbIdObjects)
     return(
     <section>
         <h2>Welcome to the Authors table page</h2>
         <DBTable
             objects = {authors}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}
+            />
     </section>
     );
 };

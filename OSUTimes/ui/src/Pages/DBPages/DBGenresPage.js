@@ -20,6 +20,7 @@ function DBGenresPage(){
         }
     ]
     let dbColumns = ["genre_id", "genre_name"];
+    let IdObjects = {} 
 
     const [columns, setColumns] = useState(dbColumns);
     const [genres, setGenres] = useState(dbGenres);
@@ -28,7 +29,8 @@ function DBGenresPage(){
         <h2>Welcome to the Genres table page</h2>
         <DBTable
             objects = {genres}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };

@@ -5,7 +5,7 @@ function DBRowItem({object,colName}){
     return(
 
         <td>
-            <div class="tableItem">{object[colName]}</div>
+            <div className="tableItem">{object[colName]}</div>
         </td>
     )
 }

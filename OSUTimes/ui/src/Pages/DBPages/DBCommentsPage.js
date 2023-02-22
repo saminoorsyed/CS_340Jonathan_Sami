@@ -30,15 +30,20 @@ function DBCommentsPage(){
         }
     ]
     let dbColumns = ["comment_id", "post_id", "user_id", "date_commented", "comment_text"];
-
+    let dbIdObjects = {
+        "user_id": [["Moral Officer",0],[ "Chief Engineer",1], ["Lead Botanist",2]],
+        "post_id": [["Ethics of the Collective",0],["An Anthropology of space faring",1], ["The varied uses of flux capacitors",2]]
+    } 
     const [columns, setColumns] = useState(dbColumns);
     const [comments, setComments] = useState(dbComments);
+    const [IdObjects, setIdObjects] = useState(dbIdObjects)
     return(
     <section>
         <h2>Welcome to the Comments table page</h2>
         <DBTable
             objects = {comments}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };

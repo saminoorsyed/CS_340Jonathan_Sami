@@ -29,15 +29,17 @@ function DBAdminsPage(){
         }
     ]
     let dbColumns = ["admin_id", "username", "fname", "lname", "email"];
-
+    let dbIdObjects = {}
     const [columns, setColumns] = useState(dbColumns);
     const [admins, setAdmins] = useState(dbAdmins);
+    const [IdObjects, setIdObjects] = useState(dbIdObjects)
     return(
     <section>
         <h2>Welcome to the Admins table page</h2>
         <DBTable
             objects = {admins}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };

@@ -36,15 +36,20 @@ function DBPostsPage(){
         }
     ]
     let dbColumns = ["post_id", "author_id", "genre_id", "title", "date_posted", "post_text", "image_b64_str"];
-
+    let dbIdObjects = {
+        "author_id": [["TheDoctor",0], ["Borg",1], ["Lieutenant",2]],
+        "genre_id": [["Anthropology",0],["Music",1],["Blaspheme",2]]
+    } 
     const [columns, setColumns] = useState(dbColumns);
     const [posts, setPosts] = useState(dbPosts);
+    const [IdObjects, setIdObjects] = useState(dbIdObjects)
     return(
     <section>
         <h2>Welcome to the Posts table page</h2>
         <DBTable
             objects = {posts}
-            columns = {columns}/>
+            columns = {columns}
+            IdObjects = {IdObjects}/>
     </section>
     );
 };
