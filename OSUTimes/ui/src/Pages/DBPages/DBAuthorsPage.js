@@ -3,6 +3,8 @@ import {useState} from 'react';
 
 // import components
 import DBTable from "../../Components/DBComponents/DBTable";
+import DBSearchFilter from "../../Components/DBComponents/DBSearchFilter";
+
 function DBAuthorsPage(){
     let dbAuthors = [                
         {
@@ -40,11 +42,31 @@ function DBAuthorsPage(){
     const [columns, setColumns] = useState(dbColumns);
     const [authors, setAuthors] = useState(dbAuthors);
     const [IdObjects, setIdObjects] = useState(dbIdObjects)
+
+    const [query, setQuery] = useState('');
+    const results = filterItems(authors, query);
+
+    function filterItems(items, query){
+        return items.filter(item => item.username.includes(query))
+    }
+
+
+    function handleChange(e){
+        setQuery(e.target.value);
+    }
+
+
+
     return(
     <section>
         <h2>Welcome to the Authors table page</h2>
+        <DBSearchFilter
+            query={query}
+            onChange={handleChange}
+            name={"username"}
+        />
         <DBTable
-            objects = {authors}
+            objects = {results}
             columns = {columns}
             IdObjects = {IdObjects}
             />

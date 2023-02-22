@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 // import components
 import DBTable from "../../Components/DBComponents/DBTable";
-
+import DBSearchFilter from "../../Components/DBComponents/DBSearchFilter";
 
 function DBCommentsPage(){
     let dbComments = [                
@@ -37,11 +37,30 @@ function DBCommentsPage(){
     const [columns, setColumns] = useState(dbColumns);
     const [comments, setComments] = useState(dbComments);
     const [IdObjects, setIdObjects] = useState(dbIdObjects)
+
+    const [query, setQuery] = useState('');
+    const results = filterItems(comments, query);
+
+    function filterItems(items, query){
+        return items.filter(item => item.user_id.includes(query))
+    }
+
+
+    function handleChange(e){
+        setQuery(e.target.value);
+    }
+
+
     return(
     <section>
         <h2>Welcome to the Comments table page</h2>
+        <DBSearchFilter
+            query={query}
+            onChange={handleChange}
+            name={"user"}
+        />
         <DBTable
-            objects = {comments}
+            objects = {results}
             columns = {columns}
             IdObjects = {IdObjects}/>
     </section>

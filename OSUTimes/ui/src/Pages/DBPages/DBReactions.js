@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 // import components
 import DBTable from "../../Components/DBComponents/DBTable";
-
+import DBSearchFilter from "../../Components/DBComponents/DBSearchFilter";
 
 function DBReactionsPage(){
     let dbReactions = [                
@@ -38,11 +38,30 @@ function DBReactionsPage(){
     const [columns, setColumns] = useState(dbColumns);
     const [reactions, setReactions] = useState(dbReactions);
     const [IdObjects, setIdObjects] = useState(dbIdObjects);
+
+    const [query, setQuery] = useState('');
+    const results = filterItems(reactions, query);
+
+    function filterItems(items, query){
+        return items.filter(item => item.reaction_icon_id.includes(query))
+    }
+
+
+    function handleChange(e){
+        setQuery(e.target.value);
+    }
+
+
     return(
     <section>
         <h2>Welcome to the Reactions Table page</h2>
+        <DBSearchFilter
+            query={query}
+            onChange={handleChange}
+            name={"reaction_icon"}
+        />
         <DBTable
-            objects = {reactions}
+            objects = {results}
             columns = {columns}
             IdObjects = {IdObjects}/>
     </section>

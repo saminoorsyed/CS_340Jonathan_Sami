@@ -290,6 +290,21 @@ object {}
   overflow: auto;
 }
 
+.overview {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 10px 10px;
+  table-layout: fixed;
+  width: 95%;
+  box-shadow: 1px 1px 5px var(--border-color);
+}
+
+.schema {
+  table-layout: fixed;
+  width: 95%;
+  box-shadow: 1px 1px 5px var(--border-color);
+}
+
 .floatright {}
 
 .floatleft {}

@@ -3,6 +3,8 @@ import {useState} from 'react';
 
 // import components
 import DBTable from "../../Components/DBComponents/DBTable";
+import DBSearchFilter from "../../Components/DBComponents/DBSearchFilter";
+
 function DBUsersPage(){
     let dbUsers = [                
         {
@@ -31,11 +33,30 @@ function DBUsersPage(){
     let IdObjects = {}
     const [columns, setColumns] = useState(dbColumns);
     const [users, setUsers] = useState(dbUsers);
+
+    const [query, setQuery] = useState('');
+    const results = filterItems(users, query);
+
+    function filterItems(items, query){
+        return items.filter(item => item.username.includes(query))
+    }
+
+
+    function handleChange(e){
+        setQuery(e.target.value);
+    }
+
+
     return(
     <section>
         <h2>Welcome to the Users Table page</h2>
+        <DBSearchFilter
+            query={query}
+            onChange={handleChange}
+            name={"username"}
+        />
         <DBTable
-            objects = {users}
+            objects = {results}
             columns = {columns}
             IdObjects = {IdObjects}/>
     </section>
