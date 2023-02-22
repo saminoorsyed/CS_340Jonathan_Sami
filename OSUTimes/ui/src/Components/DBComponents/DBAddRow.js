@@ -11,7 +11,7 @@ function DBAddRow({colName, IdObjects}){
         <>
             {isID &&
             <div className="editRow">
-                <label htmlFor = {colName}>{colName.slice(0,-3)}</label>
+                <label htmlFor = {colName}>{colName.slice(0,-3)}
                 <select type="text" id={colName}>
                     {IdObjects[colName].map((IDobject, i)=>
                         <SelectOption
@@ -20,6 +20,7 @@ function DBAddRow({colName, IdObjects}){
                         key = {i}
                         />)}
                 </select>
+                </label>
             </div>
         }
         {!isID &&
