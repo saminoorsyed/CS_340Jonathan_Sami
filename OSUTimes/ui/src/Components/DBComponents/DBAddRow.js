@@ -3,7 +3,7 @@ import React from "react";
 // import components
 import SelectOption from './DBSelectOption';
 function DBAddRow({colName, IdObjects}){
-    let isID = false
+    let isID = false;
     if (colName.slice(-3)=== "_id"){
         isID = true;
     }
