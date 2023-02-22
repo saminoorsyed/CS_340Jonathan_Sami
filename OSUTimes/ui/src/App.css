@@ -190,7 +190,7 @@ ins {}
 table {
   margin-top: 40px;
   table-layout: fixed;
-  width: 1000px;
+  width: 95%;
   box-shadow: 1px 1px 5px var(--border-color);
 }
 

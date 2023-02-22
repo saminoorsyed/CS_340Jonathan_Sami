@@ -11,7 +11,7 @@ function DBAuthorsPage(){
             "fname":"The",
             "lname":"Doctor",
             "email":"TheDoctor@Hologram.com",
-            "admin_id":1,
+            "admin_id":"Lead Botanist",
             "admin_action":"1) on 11.3.4060 Supreme Commander expressed concern on post content 2)Warned and put on probation on 11.4.4060"
         },
         {
@@ -20,7 +20,7 @@ function DBAuthorsPage(){
             "fname": "Seven",
             "lname": "ofNine",
             "email": "sevenofnine@borg.com",
-            "admin_id":2,
+            "admin_id":"Chief Engineer",
             "admin_action": "1)Promote her work to front page (Supreme commander expressed approval)"
         },
         {
@@ -29,7 +29,7 @@ function DBAuthorsPage(){
             "fname": "Tom",
             "lname": "Paris",
             "email":"tparis@starfleet.com",
-            "admin_id":2,
+            "admin_id": "Chief Engineer",
             "admin_action":"Null"
         }
     ]

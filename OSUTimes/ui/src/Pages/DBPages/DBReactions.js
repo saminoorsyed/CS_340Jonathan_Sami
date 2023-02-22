@@ -9,23 +9,23 @@ function DBReactionsPage(){
     let dbReactions = [                
         {
             "reaction_id":0,
-            "post_id":1,
-            "user_id":2,
-            "reaction_icon_id":2,
+            "post_id":"An Anthropology of space faring",
+            "user_id":"Lead Botanist",
+            "reaction_icon_id":"heart",
             "date_commented":"3540-25-28 15:44:52.123",
         },
         {
             "reaction_id":1,
-            "post_id":2,
-            "user_id":1,
-            "reaction_icon_id":1,
+            "post_id":"The varied uses of flux capacitors",
+            "user_id":"Chief Engineer",
+            "reaction_icon_id":"sad face",
             "date_commented":"3540-25-28 15:44:52.123",
         },
         {
             "reaction_id": 2,
-            "post_id": 2,
-            "user_id": 1,
-            "reaction_icon_id":1,
+            "post_id": "The varied uses of flux capacitors",
+            "user_id": "Chief Engineer",
+            "reaction_icon_id":"sad face",
             "date_commented": "3540-25-28 15:44:52.123",
         }
     ]
