@@ -1,3 +1,6 @@
+resources:
+https://beta.reactjs.org/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
