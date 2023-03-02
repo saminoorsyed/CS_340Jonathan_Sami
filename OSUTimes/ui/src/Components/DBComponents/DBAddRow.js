@@ -30,6 +30,6 @@ function DBAddRow({colName, IdObjects}){
         }
         </>
     )
-}
+};
 
 export default DBAddRow

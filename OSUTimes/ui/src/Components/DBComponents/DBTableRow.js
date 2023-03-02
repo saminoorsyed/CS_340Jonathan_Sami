@@ -1,13 +1,23 @@
 import React, {useState} from "react";
 import {MdOutlineClose, MdModeEditOutline} from 'react-icons/md'
 
+
 // import components
 import DBRowItem from "./DBRowItem";
 import DBEditRow from "./DBEditRow";
 
 function DBTableRow({object, columns,IdObjects}){
-    const handleDeleteClick = (id, username)=>{
-        alert(`you deleted ${username} with an id of ${id}`)
+    const handleDeleteClick = async (id)=>{
+        const response = await fetch(`http://flip3.engr.oregonstate.edu:4002/api/ReactionIcons/${id}`,{
+            method: 'DELETE'
+        });
+        if (response.ok) {
+      // Handle success
+        console.log('Item deleted successfully');
+        } else {
+        // Handle error
+        console.log('Item deletion failed');
+        }
     };
     const handleEditClick = ()=>{
         let editToggle =  !editClicked;
